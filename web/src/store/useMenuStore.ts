@@ -1,15 +1,7 @@
 import { create } from "zustand";
 import { DigiDishClient, Restaurant, Menu, MenuSection, MenuItem } from "@/lib/api-client";
 
-// Get base URL for client queries
-const getBaseUrl = () => {
-  if (typeof window !== "undefined") {
-    return window.location.origin;
-  }
-  return process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-};
-
-const api = new DigiDishClient(getBaseUrl());
+const api = new DigiDishClient("");
 
 interface MenuStore {
   currentRestaurant: Restaurant | null;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMenuStore } from "@/store/useMenuStore";
@@ -27,7 +27,7 @@ import {
   Download
 } from "lucide-react";
 
-export default function Dashboard() {
+function DashboardContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const isDemoUrl = searchParams.get("demo") === "true";
@@ -722,5 +722,18 @@ export default function Dashboard() {
       </main>
 
     </div>
+  );
+}
+
+export default function Dashboard() {
+  return (
+    <Suspense fallback={
+      <div className="bg-[#0A0A0C] text-slate-400 min-h-screen flex flex-col items-center justify-center">
+        <Loader2 className="h-10 w-10 text-rose-500 animate-spin mb-4" />
+        <span className="ml-3 text-slate-450 text-sm">Loading workspace...</span>
+      </div>
+    }>
+      <DashboardContent />
+    </Suspense>
   );
 }

@@ -20,7 +20,9 @@ export async function GET(
       return NextResponse.json({ error: "Menu not found" }, { status: 404 });
     }
 
-    const origin = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+    const host = request.headers.get("x-forwarded-host") || request.headers.get("host") || "localhost:3000";
+    const proto = request.headers.get("x-forwarded-proto") || "http";
+    const origin = `${proto}://${host}`;
     const qrData = `${origin}/menu/${id}`;
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=${encodeURIComponent(qrData)}`;
 

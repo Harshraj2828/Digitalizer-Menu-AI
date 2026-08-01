@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, Suspense } from "react";
 import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useMenuStore } from "@/store/useMenuStore";
@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { MenuItem, MenuSection } from "@/lib/api-client";
 
-export default function MenuDetail() {
+function MenuDetailContent() {
   const { id } = useParams() as { id: string };
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -634,5 +634,18 @@ export default function MenuDetail() {
 
       </div>
     </div>
+  );
+}
+
+export default function MenuDetail() {
+  return (
+    <Suspense fallback={
+      <div className="bg-[#0A0A0C] text-slate-400 min-h-screen flex flex-col items-center justify-center">
+        <Loader2 className="h-10 w-10 text-rose-500 animate-spin mb-4" />
+        <p className="text-sm">Fetching digital menu structure...</p>
+      </div>
+    }>
+      <MenuDetailContent />
+    </Suspense>
   );
 }
