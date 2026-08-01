@@ -103,7 +103,14 @@ export class DigiDishClient {
     });
 
     if (!response.ok) {
-      throw new Error(`Upload failed: ${response.statusText}`);
+      let errMsg = response.statusText;
+      try {
+        const errJson = await response.json();
+        if (errJson && errJson.error) {
+          errMsg = errJson.error;
+        }
+      } catch {}
+      throw new Error(errMsg ? `Upload failed: ${errMsg}` : "Upload failed");
     }
 
     return response.json();
