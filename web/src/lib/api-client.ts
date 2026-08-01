@@ -116,6 +116,17 @@ export class DigiDishClient {
     return response.json();
   }
 
+  private async handleError(response: Response, defaultMessage: string): Promise<never> {
+    let errMsg = response.statusText;
+    try {
+      const errJson = await response.json();
+      if (errJson && errJson.error) {
+        errMsg = errJson.error;
+      }
+    } catch {}
+    throw new Error(errMsg ? `${defaultMessage}: ${errMsg}` : defaultMessage);
+  }
+
   async getMenu(id: string): Promise<Menu & { sections: MenuSection[] }> {
     const response = await fetch(`${this.baseUrl}/api/menus/${id}`, {
       method: "GET",
@@ -123,7 +134,7 @@ export class DigiDishClient {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch menu: ${response.statusText}`);
+      await this.handleError(response, "Failed to fetch menu");
     }
 
     return response.json();
@@ -158,7 +169,7 @@ export class DigiDishClient {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to save menu: ${response.statusText}`);
+      await this.handleError(response, "Failed to save menu");
     }
 
     return response.json();
@@ -171,7 +182,7 @@ export class DigiDishClient {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to publish menu: ${response.statusText}`);
+      await this.handleError(response, "Failed to publish menu");
     }
 
     return response.json();
@@ -184,7 +195,7 @@ export class DigiDishClient {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch restaurant menus: ${response.statusText}`);
+      await this.handleError(response, "Failed to fetch restaurant menus");
     }
 
     return response.json();
@@ -197,7 +208,7 @@ export class DigiDishClient {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch restaurants: ${response.statusText}`);
+      await this.handleError(response, "Failed to fetch restaurants");
     }
 
     return response.json();
@@ -211,7 +222,7 @@ export class DigiDishClient {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to create restaurant: ${response.statusText}`);
+      await this.handleError(response, "Failed to create restaurant");
     }
 
     return response.json();
