@@ -1,0 +1,60 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Restaurant {
+  id           String   @id @default(uuid())
+  ownerId      String   // Matches Supabase/Auth User ID
+  name         String
+  address      String?
+  phone        String?
+  ownerName    String?
+  email        String?  @unique
+  mobileNumber String?
+  passwordHash String?
+  gstNumber    String?
+  qrCodeUrl    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  menus        Menu[]
+}
+
+model Menu {
+  id             String        @id @default(uuid())
+  restaurantId   String
+  restaurant     Restaurant    @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  title          String
+  sourceImageUrl String?
+  status         String        @default("processing") // processing, ready, published
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  sections       MenuSection[]
+}
+
+model MenuSection {
+  id           String     @id @default(uuid())
+  menuId       String
+  menu         Menu       @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  name         String
+  displayOrder Int        @default(0)
+  items        MenuItem[]
+}
+
+model MenuItem {
+  id           String      @id @default(uuid())
+  sectionId    String
+  section      MenuSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  name         String
+  description  String      @default("")
+  price        Float
+  currency     String      @default("INR")
+  isVeg        Boolean?    // null = unspecified, true = veg, false = non-veg
+  isAvailable  Boolean     @default(true)
+  imageUrl     String?
+  displayOrder Int         @default(0)
+}

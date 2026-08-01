@@ -1,0 +1,442 @@
+{
+  "restaurants": [
+    {
+      "id": "r1",
+      "ownerId": "default-owner",
+      "name": "Spice Symphony",
+      "address": "123 Gourmet Blvd, Foodie Haven",
+      "phone": "+1 555-0199",
+      "ownerName": "Chef Spice",
+      "email": "chef@spicesymphony.com",
+      "mobileNumber": "+1 555-0199",
+      "passwordHash": "9db44c0a2943673378194de5d18a5e5627f914ae2ddd12244c3ce83909803a66",
+      "gstNumber": "22AAAAA0000A1Z5",
+      "qrCodeUrl": null,
+      "createdAt": "2026-08-01T05:22:41.027Z",
+      "updatedAt": "2026-08-01T05:22:41.027Z"
+    },
+    {
+      "id": "r-zhrhe23",
+      "ownerId": "owner-h60t885",
+      "name": "DISHY",
+      "address": "A-12 Makanji Park,Katargam,Surat",
+      "phone": "+919825682214",
+      "ownerName": "Harshraj Tarsariya",
+      "email": "harshrajtarsariya@gmail.com",
+      "mobileNumber": "+919825682214",
+      "passwordHash": "25bff2b98228397d47c77964a706543d6bccde4c6e6c43bcc40d4ae9e55c35d9",
+      "gstNumber": null,
+      "qrCodeUrl": null,
+      "createdAt": "2026-08-01T05:40:26.553Z",
+      "updatedAt": "2026-08-01T05:40:26.554Z"
+    }
+  ],
+  "menus": [
+    {
+      "id": "m1",
+      "restaurantId": "r1",
+      "title": "Spice Symphony Menu",
+      "sourceImageUrl": null,
+      "status": "published",
+      "createdAt": "2026-08-01T05:22:41.027Z",
+      "updatedAt": "2026-08-01T05:22:41.027Z",
+      "sections": [
+        {
+          "id": "s1",
+          "menuId": "m1",
+          "name": "Starters",
+          "displayOrder": 1,
+          "items": [
+            {
+              "id": "i1",
+              "sectionId": "s1",
+              "name": "Paneer Tikka",
+              "description": "Char-grilled cottage cheese cubes marinated in yogurt and spices",
+              "price": 249,
+              "currency": "INR",
+              "isVeg": true,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 1
+            },
+            {
+              "id": "i2",
+              "sectionId": "s1",
+              "name": "Chicken Seekh Kebab",
+              "description": "Skewered minced chicken seasoned with herbs and grilled in tandoor",
+              "price": 299,
+              "currency": "INR",
+              "isVeg": false,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 2
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "menuId": "m1",
+          "name": "Main Course",
+          "displayOrder": 2,
+          "items": [
+            {
+              "id": "i3",
+              "sectionId": "s2",
+              "name": "Paneer Butter Masala",
+              "description": "Cottage cheese cubes cooked in a rich, creamy tomato gravy",
+              "price": 349,
+              "currency": "INR",
+              "isVeg": true,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 1
+            },
+            {
+              "id": "i4",
+              "sectionId": "s2",
+              "name": "Butter Chicken",
+              "description": "Tandoori chicken pieces simmered in a velvety butter tomato sauce",
+              "price": 389,
+              "currency": "INR",
+              "isVeg": false,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 2
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "menuId": "m1",
+          "name": "Beverages",
+          "displayOrder": 3,
+          "items": [
+            {
+              "id": "i5",
+              "sectionId": "s3",
+              "name": "Mango Lassi",
+              "description": "Traditional yogurt based drink blended with sweet mango pulp",
+              "price": 99,
+              "currency": "INR",
+              "isVeg": true,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 1
+            },
+            {
+              "id": "i6",
+              "sectionId": "s3",
+              "name": "Masala Chai",
+              "description": "Brewed black tea with a mixture of aromatic Indian spices and herbs",
+              "price": 49,
+              "currency": "INR",
+              "isVeg": true,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m-tolzbmx",
+      "restaurantId": "r1",
+      "title": "Starters, Mains & Desserts Menu",
+      "sourceImageUrl": "/uploads/1785562251282-menu.jpg",
+      "status": "ready",
+      "createdAt": "2026-08-01T05:30:55.330Z",
+      "updatedAt": "2026-08-01T05:32:55.479Z",
+      "sections": [
+        {
+          "id": "s-mdwq1yc",
+          "menuId": "m-tolzbmx",
+          "name": "STARTERS",
+          "displayOrder": 1,
+          "items": [
+            {
+              "id": "i-0hy86su",
+              "sectionId": "s-mdwq1yc",
+              "name": "Lotsa Loaded Tots",
+              "description": "Crispy potato tots loaded with hot queso, crispy bacon and green onions. Served with Sriracha ketchup.",
+              "price": 10,
+              "currency": "USD",
+              "isVeg": true,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 1
+            },
+            {
+              "id": "i-4xblvtr",
+              "sectionId": "s-mdwq1yc",
+              "name": "Maker's Mark Wings",
+              "description": "Eight jumbo chicken wings served hot and crispy, tossed in our sweet and smoky BBQ bourbon sauce made with Maker's Mark. Served with celery sticks and your choice of Ranch or Bleu Cheese dressing.",
+              "price": 12.75,
+              "currency": "USD",
+              "isVeg": true,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 2
+            },
+            {
+              "id": "i-mtfw0y7",
+              "sectionId": "s-mdwq1yc",
+              "name": "Mountain o' nachos",
+              "description": "Fresh tortilla chips piled high and smothered with spicy ground beef and melted queso, topped with black beans, jalapeños, tomatoes, lettuce, fresh guacamole and sour cream. Serves three to four.",
+              "price": 13,
+              "currency": "USD",
+              "isVeg": true,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 3
+            },
+            {
+              "id": "i-ore7zov",
+              "sectionId": "s-mdwq1yc",
+              "name": "Buffalo Wings",
+              "description": "Eight jumbo chicken wings served hot and crispy in our Original sauce. Served with your choice of Ranch or Bleu Cheese dressing.",
+              "price": 11.5,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 4
+            },
+            {
+              "id": "i-s9mwvnt",
+              "sectionId": "s-mdwq1yc",
+              "name": "Pretzel Dogs",
+              "description": "Meaty all-beef franks wrapped in sweet pretzel dough, fresh baked and served with spicy habanero dipping sauce.",
+              "price": 9.75,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 5
+            },
+            {
+              "id": "i-chqy8it",
+              "sectionId": "s-mdwq1yc",
+              "name": "Bar burgers & Wings platter",
+              "description": "Everyone's two favorites, all on one plate! Four mini-cheeseburgers on King's Hawaiian® rolls, paired with our Original Buffalo Wings. Served with seasoned french fries.",
+              "price": 14,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 6
+            },
+            {
+              "id": "i-uyxx04g",
+              "sectionId": "s-mdwq1yc",
+              "name": "Parmesan Garlic Chicken Caesar",
+              "description": "Sautéed chicken breast, crusted in Parmesan and served over romaine lettuce with garlic-cheese croutons and Parmesan cheese, and tossed with Roasted Garlic Caesar dressing.",
+              "price": 10,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 7
+            },
+            {
+              "id": "i-gwek4au",
+              "sectionId": "s-mdwq1yc",
+              "name": "Thai Chicken Chop Salad",
+              "description": "Fresh, crisp salad greens, shredded veggies, marinated garlic chicken, cilantro and scallions tossed in a zesty Thai sesame ginger and peanut dressing, topped with giant crispy wonton chips.",
+              "price": 12,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 8
+            }
+          ]
+        },
+        {
+          "id": "s-adft1vt",
+          "menuId": "m-tolzbmx",
+          "name": "MAINS",
+          "displayOrder": 2,
+          "items": [
+            {
+              "id": "i-cg2mfye",
+              "sectionId": "s-adft1vt",
+              "name": "Grilled Chicken & Artichoke Pasta",
+              "description": "Flame-grilled chicken breast served over multigrain penne pasta tossed in a garlic, olive oil and white wine sauce with oven-roasted tomatoes, spinach, artichoke hearts and fresh basil, then topped with shredded Parmesan cheese.",
+              "price": 18,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 1
+            },
+            {
+              "id": "i-pc9xmn3",
+              "sectionId": "s-adft1vt",
+              "name": "Chimichurri Sirloin Steak",
+              "description": "8 oz. fire-grilled sirloin topped with Latin chimichurri sauce, served with roasted tricolored potatoes and fresh baby greens tossed in Balsamic Herb Vinaigrette with oven-roasted tomatoes and shredded Manchego cheese.",
+              "price": 22,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 2
+            },
+            {
+              "id": "i-r1a9wwm",
+              "sectionId": "s-adft1vt",
+              "name": "Bass® Ale Battered Fish & Parmesan Potato Chips",
+              "description": "8 oz. wild-caught, sustainably sourced Pacific cod filet, Bass® Ale battered and fried until golden brown and crispy, served with crunchy Parmesan-dusted house-made Yukon Gold potato chips and creamy malt vinegar aioli.",
+              "price": 21.75,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 3
+            },
+            {
+              "id": "i-2q70tcb",
+              "sectionId": "s-adft1vt",
+              "name": "Teriyaki Sirloin Steak",
+              "description": "Fire-grilled 8 oz. sirloin marinated and glazed with our sweet teriyaki sauce. Served with loaded garlic mashed potatoes and crispy frazzled onions.",
+              "price": 22.5,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 4
+            },
+            {
+              "id": "i-0gyicnv",
+              "sectionId": "s-adft1vt",
+              "name": "Buster's™ Cheeseburger",
+              "description": "A seasoned half-pound burger, grilled and topped with American cheese and served on a toasted brioche bun.",
+              "price": 8,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 5
+            }
+          ]
+        },
+        {
+          "id": "s-wpth8u6",
+          "menuId": "m-tolzbmx",
+          "name": "DESSERTS",
+          "displayOrder": 3,
+          "items": [
+            {
+              "id": "i-kczabb7",
+              "sectionId": "s-wpth8u6",
+              "name": "Hot & Sugary Donut Bites",
+              "description": "A basketful of warm sugarcoated plain and chocolate donut holes with raspberry and chocolate dipping sauces.",
+              "price": 8,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 1
+            },
+            {
+              "id": "i-sk4r6uc",
+              "sectionId": "s-wpth8u6",
+              "name": "Bananas Foster Pie",
+              "description": "Chilled banana pudding and vanilla sponge cake layered in a cinnamon-graham pastry with rum sauce and warm caramel.",
+              "price": 7.5,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 2
+            },
+            {
+              "id": "i-z0qz77p",
+              "sectionId": "s-wpth8u6",
+              "name": "Triple Layer Chocolate Cake",
+              "description": "Alternating layers of rich, creamy frosting and moist, decadent cake topped with a fudge drizzle and a dusting of fine cocoa.",
+              "price": 6.5,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 3
+            },
+            {
+              "id": "i-dl6gwum",
+              "sectionId": "s-wpth8u6",
+              "name": "Decadent Chocolate Fondue",
+              "description": "Fluffy marshmallows, crisp graham crackers, strawberry and banana slices, pound cake and brownie bites, all surrounding a warm fondue pot filled with rich, melted chocolate.",
+              "price": 10,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 4
+            },
+            {
+              "id": "i-h5xftlc",
+              "sectionId": "s-wpth8u6",
+              "name": "Ginormous Brownie Sundae",
+              "description": "Chocolate chip pecan brownies with vanilla bean ice cream, covered in chocolate, caramel and raspberry sauces and fresh strawberries. Topped off with whipped cream and a cherry.",
+              "price": 9.5,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 5
+            },
+            {
+              "id": "i-2mob71w",
+              "sectionId": "s-wpth8u6",
+              "name": "Rich & Creamy Cheesecake",
+              "description": "Our classic NY cheesecake with graham cracker crust. Served with warm caramel and pecans or with berry sauce.",
+              "price": 9,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 6
+            },
+            {
+              "id": "i-y2i04pw",
+              "sectionId": "s-wpth8u6",
+              "name": "Handmade Shakes",
+              "description": "Made with real ice cream, hand-dipped and blended until smooth. Available in chocolate, vanilla and strawberry.",
+              "price": 6.75,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 7
+            },
+            {
+              "id": "i-t688zj1",
+              "sectionId": "s-wpth8u6",
+              "name": "Salted Caramel & Pecan Cheesecake",
+              "description": "House-made caramel scented cheesecake with fresh blackberries & orange segments - gluten friendly.",
+              "price": 9.5,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 8
+            },
+            {
+              "id": "i-gyx61zv",
+              "sectionId": "s-wpth8u6",
+              "name": "Tasting Trio",
+              "description": "mini versions of our white chocolate brownie, sticky toffee pudding + salted caramel & pecan cheesecake, served with french vanilla ice cream.",
+              "price": 11,
+              "currency": "USD",
+              "isVeg": null,
+              "isAvailable": true,
+              "imageUrl": null,
+              "displayOrder": 9
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

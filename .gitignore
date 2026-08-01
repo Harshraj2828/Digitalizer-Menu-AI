@@ -1,0 +1,43 @@
+# Root gitignore for DIGIDISH monorepo
+
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# next.js
+.next/
+out/
+
+# expo / react native / mobile
+.expo/
+*.jks
+*.p8
+*.keystore
+*.apk
+*.aab
+node_modules/
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+web/.env
+mobile/.env
+
+# build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# system files
+.DS_Store
+Thumbs.db
