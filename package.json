@@ -1,0 +1,13 @@
+{
+  "name": "digidish-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DIGIDISH Monorepo: University Presentation root controls",
+  "scripts": {
+    "dev:web": "npm run dev --prefix web",
+    "build:web": "npm run build --prefix web",
+    "dev:mobile": "npm run start --prefix mobile",
+    "db:push": "npm run db:push --prefix web",
+    "local-server": "npm run dev --prefix web"
+  }
+}
