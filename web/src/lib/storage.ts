@@ -58,16 +58,21 @@ export async function uploadImage(
     }
   }
 
-  // Local fallback storage
-  console.log("Saving image locally (mock upload):", uniqueName);
-  const uploadDir = path.join(process.cwd(), "public/uploads");
-  
-  if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
+  // Local fallback storage (with try-catch for read-only environments like Vercel)
+  try {
+    console.log("Saving image locally (mock upload):", uniqueName);
+    const uploadDir = path.join(process.cwd(), "public/uploads");
+    
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+
+    const filePath = path.join(uploadDir, uniqueName);
+    fs.writeFileSync(filePath, fileBuffer);
+
+    return `/uploads/${uniqueName}`;
+  } catch (fsErr) {
+    console.warn("Local storage write failed (likely read-only serverless environment), returning placeholder:", fsErr);
+    return "/sample-menu.png";
   }
-
-  const filePath = path.join(uploadDir, uniqueName);
-  fs.writeFileSync(filePath, fileBuffer);
-
-  return `/uploads/${uniqueName}`;
 }
