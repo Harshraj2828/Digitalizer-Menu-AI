@@ -146,22 +146,35 @@ function getInitialData(): MockSchema {
   };
 }
 
+// Module-level caching for serverless environments (Vercel)
+let cachedDb: MockSchema | null = null;
+
 export function readMockDB(): MockSchema {
+  if (cachedDb) {
+    return cachedDb;
+  }
   try {
     if (!fs.existsSync(DB_FILE)) {
       const data = getInitialData();
-      fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf8");
+      try {
+        fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf8");
+      } catch {}
+      cachedDb = data;
       return data;
     }
     const content = fs.readFileSync(DB_FILE, "utf8");
-    return JSON.parse(content);
+    cachedDb = JSON.parse(content);
+    return cachedDb!;
   } catch (error) {
     console.error("Error reading mock DB:", error);
-    return getInitialData();
+    const data = getInitialData();
+    cachedDb = data;
+    return data;
   }
 }
 
 export function writeMockDB(data: MockSchema) {
+  cachedDb = data;
   try {
     const dir = path.dirname(DB_FILE);
     if (!fs.existsSync(dir)) {
@@ -169,7 +182,7 @@ export function writeMockDB(data: MockSchema) {
     }
     fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf8");
   } catch (error) {
-    console.error("Error writing mock DB:", error);
+    console.error("Error writing mock DB (Vercel bypass active):", error);
   }
 }
 
