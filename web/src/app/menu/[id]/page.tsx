@@ -27,6 +27,7 @@ function MenuDetailContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const isDemoUrl = searchParams.get("demo") === "true";
+  const queryStr = isDemoUrl ? "?demo=true" : "";
 
   const {
     activeMenu,
@@ -223,7 +224,7 @@ function MenuDetailContent() {
     return (
       <div className="bg-[#0A0A0C] text-slate-400 min-h-screen flex flex-col items-center justify-center p-6 text-center">
         <p className="text-red-400 font-semibold mb-4">Error loading menu: {error || "Menu not found"}</p>
-        <Link href="/dashboard" className="px-5 py-2.5 rounded-xl bg-rose-600 text-white font-bold text-xs flex items-center space-x-1.5">
+        <Link href={`/dashboard${queryStr}`} className="px-5 py-2.5 rounded-xl bg-rose-600 text-white font-bold text-xs flex items-center space-x-1.5">
           <ArrowLeft className="h-4 w-4" />
           <span>Back to Dashboard</span>
         </Link>
@@ -244,7 +245,7 @@ function MenuDetailContent() {
       <div className="border-b border-[#1E1E24] bg-[#0C0C10] px-6 py-4 sticky top-0 z-30 shadow-md">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center space-x-3.5 w-full sm:w-auto">
-            <Link href="/dashboard" className="p-2 rounded-xl border border-[#2D2D38] hover:border-slate-500 hover:text-white transition-colors bg-[#13131A]/60">
+            <Link href={`/dashboard${queryStr}`} className="p-2 rounded-xl border border-[#2D2D38] hover:border-slate-500 hover:text-white transition-colors bg-[#13131A]/60">
               <ArrowLeft className="h-4 w-4" />
             </Link>
             <div className="truncate">
